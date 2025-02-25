@@ -4,15 +4,10 @@ body {
 
 .header-row {
   background-color: rgb(76, 36, 116);
-  max-width: 100%;
 }
 
 .header-row h1 {
   color: white;
-}
-
-img {
-  max-width: 100%;
 }
 
 .form-group {
@@ -39,14 +34,12 @@ button {
 }
 
 .form-footer {
-  display: flex;
-  justify-content: flex-end;
+  text-align: right;
 }
 
 .button-base {
   background-color: rgb(76, 36, 116);
   color: white;
-  border-radius: 6px;
   cursor: pointer;
   padding: 0.5rem;
   font-size: 11px;
