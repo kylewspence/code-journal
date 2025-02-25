@@ -1,22 +1,29 @@
-const data = {
-  view: 'entry-form',
-  entries: readData(),
-  editing: null,
-  nextEntryId: 1,
-};
+interface Data {
+  view: string;
+  entries: Entry[];
+  editing: Entry | null;
+  nextEntryId: number;
+}
 
-// local storage
+const data: Data = readData();
 
 function writeData(): void {
   const jsonData = JSON.stringify(data);
   localStorage.setItem('entries-storage', jsonData);
 }
 
-function readData(): Entry[] {
-  const jsonEntries = localStorage.getItem('entries-storage');
-  if (!jsonEntries) {
-    return data.entries;
+function readData(): Data {
+  const jsonData = localStorage.getItem('entries-storage');
+
+  if (!jsonData) {
+    return {
+      view: 'entry-form',
+      entries: [],
+      editing: null,
+      nextEntryId: 1,
+    };
   } else {
-    return JSON.parse(jsonEntries);
+    const parsedData = JSON.parse(jsonData);
+    return parsedData;
   }
 }

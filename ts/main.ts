@@ -1,4 +1,3 @@
-// everything else
 interface FormElements extends HTMLFormControlsCollection {
   title: HTMLInputElement;
   'photo-url': HTMLInputElement;
@@ -35,11 +34,7 @@ $formElement.addEventListener('submit', (event: Event) => {
     notes: $formElements.notes.value,
     entryId: data.nextEntryId,
   };
-  newEntry.entryId = data.nextEntryId;
   data.nextEntryId++;
-  if (!data.entries) {
-    data.entries = [];
-  }
   data.entries.unshift(newEntry);
   writeData();
   $imgPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
