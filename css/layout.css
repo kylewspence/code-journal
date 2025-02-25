@@ -11,6 +11,7 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .column-full,
@@ -18,7 +19,7 @@
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .container {
     max-width: 900px;
   }
@@ -31,4 +32,11 @@
   .column-half {
     width: 50%;
   }
+
+  .row {
+    align-items: flex-start;
+    flex-direction: row;
+  }
 }
+
+/* make sure to use this provided style - only adjust for layout, not stylistic choices. */

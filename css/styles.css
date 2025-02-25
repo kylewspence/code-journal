@@ -1,0 +1,52 @@
+body {
+  background-color: rgb(238, 238, 238);
+}
+
+.header-row {
+  background-color: rgb(76, 36, 116);
+}
+
+.header-row h1 {
+  color: white;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  min-height: 14vh;
+}
+
+input,
+textarea,
+button {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.form-footer {
+  text-align: right;
+}
+
+.button-base {
+  background-color: rgb(76, 36, 116);
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 11px;
+}
+
+input[name='title'],
+input[name='photo-url'] {
+  height: 30px;
+  padding: 0.5rem;
+}
