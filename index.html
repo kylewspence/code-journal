@@ -21,13 +21,14 @@
         <div class="container">
           <div class="row">
             <h1>Code Journal</h1>
-            <h2 class="entries-header-text">Entries</h2>
+            <a href="#" class="entries-link">Entries</a>
           </div>
         </div>
       </div>
     </header>
     <main class="container">
-      <div data-view="entry-form" class="hidden">
+      <!--DATA VIEW-->
+      <div data-view="entry-form">
         <form>
           <h1 class="row column-full">New Entry</h1>
 
@@ -65,45 +66,13 @@
           </div>
         </form>
       </div>
-
-      <div data-view="entries">
+      <!--DATA VIEW-->
+      <div data-view="entries" class="hidden">
         <div class="entries-header">
           <h1>Entries</h1>
-          <button type="submit" class="button-base">NEW</button>
+          <a href="#" class="new-entry-button button-base">NEW</a>
         </div>
-        <ul class="user-entry">
-          <li class="row">
-            <img
-              src="images/placeholder-image-square.jpg"
-              alt="Entry Image"
-              class="column-half" />
-            <div class="entry-text">
-              <h3>A newer image</h3>
-              <p>A very nice lake!</p>
-            </div>
-          </li>
-          <li class="row">
-            <img
-              src="images/placeholder-image-square.jpg"
-              alt="Entry Image"
-              class="column-half" />
-            <div class="entry-text">
-              <h3>this is a newer image</h3>
-              <p>A pretty nice lake!</p>
-            </div>
-          </li>
-
-          <li class="row">
-            <img
-              src="images/placeholder-image-square.jpg"
-              alt="Entry Image"
-              class="column-half" />
-            <div class="entry-text">
-              <h3>A new image</h3>
-              <p>This is not a lake</p>
-            </div>
-          </li>
-        </ul>
+        <ul class="user-entry"></ul>
       </div>
     </main>
     <script src="js/data.js"></script>
