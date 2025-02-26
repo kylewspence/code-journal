@@ -129,7 +129,7 @@ $entriesLink.addEventListener('click', () => {
 });
 
 const $newLink = document.querySelector('.new-entry-button');
-if (!$entriesLink) throw new Error('New link not found');
+if (!$newLink) throw new Error('New link not found');
 $newLink?.addEventListener('click', () => {
   viewSwap('entry-form');
 });
