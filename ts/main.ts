@@ -39,8 +39,8 @@ $formElement.addEventListener('submit', (event: Event) => {
   data.entries.unshift(newEntry);
   writeData();
 
-  const li = renderEntry(newEntry);
-  $ul?.prepend(li);
+  const $li = renderEntry(newEntry);
+  $ul?.prepend($li);
 
   viewSwap('entries');
   toggleNoEntries();
@@ -50,29 +50,28 @@ $formElement.addEventListener('submit', (event: Event) => {
 });
 
 function renderEntry(entry: Entry): HTMLElement {
-  const li = document.createElement('li');
-  li.classList.add('row');
+  const $li = document.createElement('li');
+  $li.classList.add('row');
 
-  const img = document.createElement('img');
-  img.classList.add('column-half');
-  img.setAttribute('src', entry.photoUrl);
-  img.setAttribute('alt', entry.title);
+  const $img = document.createElement('img');
+  $img.setAttribute('src', entry.photoUrl);
+  $img.setAttribute('alt', entry.title);
 
-  const div = document.createElement('div');
-  div.classList.add('entry-text');
+  const $div = document.createElement('div');
+  $div.classList.add('entry-text');
 
-  const h3 = document.createElement('h3');
-  h3.textContent = entry.title;
+  const $h3 = document.createElement('h3');
+  $h3.textContent = entry.title;
 
-  const p = document.createElement('p');
-  p.textContent = entry.notes;
+  const $p = document.createElement('p');
+  $p.textContent = entry.notes;
 
-  div.appendChild(h3);
-  div.appendChild(p);
-  li.appendChild(img);
-  li.appendChild(div);
+  $div.appendChild($h3);
+  $div.appendChild($p);
+  $li.appendChild($img);
+  $li.appendChild($div);
 
-  return li;
+  return $li;
 }
 
 const $ul = document.querySelector('.user-entry');

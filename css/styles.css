@@ -8,6 +8,7 @@ body {
 
 .header-row h1 {
   color: white;
+  font-size: 36px;
 }
 
 .form-group {
@@ -53,6 +54,7 @@ input[name='photo-url'] {
 
 .user-entry img {
   border-radius: 6px;
+  max-width: 50%;
 }
 
 .entries-header {
