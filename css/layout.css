@@ -11,7 +11,8 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+
+  /* flex-direction: column; removed for entries in header testing */
 }
 
 .column-full,
@@ -36,6 +37,10 @@
   .row {
     align-items: flex-start;
     flex-direction: row;
+  }
+
+  .user-entry img {
+    margin: 0.5rem;
   }
 }
 
