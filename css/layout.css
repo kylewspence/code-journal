@@ -11,12 +11,16 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
 }
 
 .column-full,
 .column-half {
   width: 100%;
+}
+
+.user-entry img {
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
 }
 
 @media screen and (width >= 768px) {
@@ -38,5 +42,3 @@
     flex-direction: row;
   }
 }
-
-/* make sure to use this provided style - only adjust for layout, not stylistic choices. */

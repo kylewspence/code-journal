@@ -19,13 +19,15 @@
     <header>
       <div class="header-row">
         <div class="container">
-          <div class="row">
+          <div class="row column-full">
             <h1>Code Journal</h1>
+            <a href="#" class="entries-link">Entries</a>
           </div>
         </div>
       </div>
     </header>
     <main class="container">
+      <!--DATA VIEW-->
       <div data-view="entry-form">
         <form>
           <h1 class="row column-full">New Entry</h1>
@@ -64,8 +66,14 @@
           </div>
         </form>
       </div>
-
-      <div data-view="entries" class="hidden"></div>
+      <!--DATA VIEW-->
+      <div data-view="entries" class="hidden">
+        <div class="entries-header column-full">
+          <h1>Entries</h1>
+          <a href="#" class="new-entry-button button-base">NEW</a>
+        </div>
+        <ul class="user-entry column-full"></ul>
+      </div>
     </main>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
