@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const li = renderEntry(entry);
     $ul.appendChild(li);
   }
+  data.editing = null;
   viewSwap(data.view);
   toggleNoEntries();
 });
@@ -153,6 +154,17 @@ $ul.addEventListener('click', (event: Event) => {
   ($formElement['photo-url'] as HTMLInputElement).value = entry.photoUrl;
   $imgPreview.setAttribute('src', entry.photoUrl);
   ($formElement.notes as HTMLInputElement).value = entry.notes;
+
+  let $entryDelete = document.querySelector('.delete') as HTMLAnchorElement;
+  if (!$entryDelete) {
+    $entryDelete = document.createElement('a');
+    $entryDelete.setAttribute('href', '#');
+    $entryDelete.textContent = 'Delete Entry';
+    $entryDelete.classList.add('delete');
+    const $formFooter = document.querySelector('.form-footer');
+    $formFooter?.appendChild($entryDelete);
+  }
+  $entryDelete.classList.remove('hidden');
 });
 
 // TOGGLE
@@ -214,4 +226,52 @@ $newLink?.addEventListener('click', () => {
   viewSwap('entry-form');
   $formElement.reset();
   $imgPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
+
+  const $entryDelete = document.querySelector('.delete');
+  if ($entryDelete) {
+    $entryDelete.remove();
+  }
+});
+
+// MODAL
+const $modal = document.querySelector('.modal') as HTMLDivElement;
+const $cancelDelete = document.querySelector(
+  '.cancel-delete',
+) as HTMLButtonElement;
+const $confirmDelete = document.querySelector(
+  '.confirm-delete',
+) as HTMLButtonElement;
+
+document.addEventListener('click', (event: Event) => {
+  const target = event.target as HTMLElement;
+
+  if (target.classList.contains('delete')) {
+    $modal.classList.remove('hidden');
+  }
+});
+
+$cancelDelete.addEventListener('click', (event: Event) => {
+  const target = event.target as HTMLElement;
+
+  if (target.classList.contains('cancel-delete')) {
+    $modal.classList.add('hidden');
+  }
+});
+
+$confirmDelete.addEventListener('click', () => {
+  if (data.editing) {
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === data.editing.entryId) {
+        data.entries.splice(i, 1);
+        const $oldLi = document.querySelector(
+          `li[data-entry-id="${data.editing.entryId}"]`,
+        );
+        $oldLi?.remove();
+        writeData();
+        toggleNoEntries();
+        $modal.classList.add('hidden');
+        viewSwap('entries');
+      }
+    }
+  }
 });
