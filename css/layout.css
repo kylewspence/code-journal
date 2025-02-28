@@ -21,6 +21,14 @@
 .user-entry img {
   margin-bottom: 0.5rem;
   margin-right: 1rem;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.user-entry .row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 @media screen and (width >= 768px) {
@@ -40,5 +48,14 @@
   .row {
     align-items: flex-start;
     flex-direction: row;
+  }
+
+  .user-entry img {
+    max-width: 50%;
+  }
+
+  .user-entry .row {
+    flex-direction: row;
+    max-width: 100%;
   }
 }
