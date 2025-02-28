@@ -9,6 +9,7 @@ body {
 .header-row h1 {
   color: white;
   font-size: 36px;
+  flex-direction: row;
 }
 
 .form-group {
@@ -52,11 +53,6 @@ input[name='photo-url'] {
   padding: 0.5rem;
 }
 
-.user-entry img {
-  border-radius: 6px;
-  max-width: 50%;
-}
-
 .entries-header {
   display: flex;
   justify-content: space-between;
@@ -87,4 +83,31 @@ ul {
   padding-left: 1rem;
   text-decoration: none;
   font-weight: bold;
+}
+
+.entry {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.entry-text {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.entry-notes {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+h3 {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+i {
+  margin-right: 2rem;
+  cursor: pointer;
 }
